@@ -1,0 +1,17 @@
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\bin\Debug\net6.0\Bolao_API_DAL.deps.json
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\bin\Debug\net6.0\Bolao_API_DAL.runtimeconfig.json
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\bin\Debug\net6.0\Bolao_API_DAL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\bin\Debug\net6.0\Bolao_API_DAL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\bin\Debug\net6.0\Bolao_API_MODEL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\bin\Debug\net6.0\Bolao_API_MODEL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.csproj.AssemblyReference.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.AssemblyInfoInputs.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.AssemblyInfo.cs
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.csproj.CoreCompileInputs.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.csproj.CopyComplete
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\refint\Bolao_API_DAL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\Bolao_API_DAL.genruntimeconfig.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_DAL\obj\Debug\net6.0\ref\Bolao_API_DAL.dll

@@ -1,0 +1,12 @@
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\bin\Release\net6.0\Bolao_API_MODEL.deps.json
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\bin\Release\net6.0\Bolao_API_MODEL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\bin\Release\net6.0\Bolao_API_MODEL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.csproj.AssemblyReference.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.AssemblyInfoInputs.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.AssemblyInfo.cs
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.csproj.CoreCompileInputs.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\refint\Bolao_API_MODEL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\Bolao_API_MODEL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_MODEL\obj\Release\net6.0\ref\Bolao_API_MODEL.dll

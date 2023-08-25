@@ -1,0 +1,17 @@
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_BLL.deps.json
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_BLL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_BLL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.csproj.AssemblyReference.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.AssemblyInfoInputs.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.AssemblyInfo.cs
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.csproj.CoreCompileInputs.cache
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\refint\Bolao_API_BLL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\ref\Bolao_API_BLL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_DAL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_MODEL.dll
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_DAL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\bin\Debug\net6.0\Bolao_API_MODEL.pdb
+C:\ProjetoRafael\apiBolao\Bolao_API_BLL\obj\Debug\net6.0\Bolao_API_BLL.csproj.CopyComplete
