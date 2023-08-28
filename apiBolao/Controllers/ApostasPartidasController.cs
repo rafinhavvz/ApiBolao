@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Bolao_API_MODEL;
-using Bolao_API_BLL;
-using System.Security.Cryptography.X509Certificates;
+using apiBolao.Model;
 
 namespace apiBolao.Controllers
 {
@@ -10,11 +8,11 @@ namespace apiBolao.Controllers
     public class ApostasPartidasController : Controller
     {
 
-        private Bolao_API_BLL.ApostasPartidasBLL _BLL;
+        private Api_BLL.ApostasPartidasBLL _BLL;
 
         public ApostasPartidasController()
         {
-            _BLL = new Bolao_API_BLL.ApostasPartidasBLL();
+            _BLL = new Api_BLL.ApostasPartidasBLL();
         }
 
         [HttpGet]

@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Bolao_API_MODEL;
-using Bolao_API_BLL;
+﻿using apiBolao.Model;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 
 namespace apiBolao.Controllers
@@ -10,11 +9,11 @@ namespace apiBolao.Controllers
     public class CampeonatosController : Controller
     {
 
-        private Bolao_API_BLL.CampeonatosBLL _BLL;
+        private Api_BLL.CampeonatosBLL _BLL;
 
         public CampeonatosController()
         {
-            _BLL = new Bolao_API_BLL.CampeonatosBLL();
+            _BLL = new Api_BLL.CampeonatosBLL();
         }
 
         [HttpGet]

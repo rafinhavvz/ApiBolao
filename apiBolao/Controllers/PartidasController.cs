@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Bolao_API_MODEL;
-using Bolao_API_BLL;
 using System.Security.Cryptography.X509Certificates;
+using apiBolao.Model;
 
 namespace apiBolao.Controllers
 {
@@ -10,11 +9,11 @@ namespace apiBolao.Controllers
     public class PartidasController : Controller
     {
 
-        private Bolao_API_BLL.PartidasBLL _BLL;
+        private Api_BLL.PartidasBLL _BLL;
 
         public PartidasController()
         {
-            _BLL = new Bolao_API_BLL.PartidasBLL();
+            _BLL = new Api_BLL.PartidasBLL();
         }
 
         [HttpGet]

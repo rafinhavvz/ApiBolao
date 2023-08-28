@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Bolao_API_MODEL;
-using Bolao_API_BLL;
+﻿using apiBolao.Model;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 
 namespace apiBolao.Controllers
@@ -10,11 +9,11 @@ namespace apiBolao.Controllers
     public class BoloesController : Controller
     {
 
-        private Bolao_API_BLL.BoloesBLL _BLL;
+        private Api_BLL.BoloesBLL _BLL;
 
         public BoloesController()
         {
-            _BLL = new Bolao_API_BLL.BoloesBLL();
+            _BLL = new Api_BLL.BoloesBLL();
         }
 
         [HttpGet]
