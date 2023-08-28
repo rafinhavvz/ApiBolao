@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Bolao_API_MODEL;
-using Bolao_API_BLL;
+﻿using apiBolao.Model;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 
 namespace apiBolao.Controllers
@@ -10,11 +9,11 @@ namespace apiBolao.Controllers
     public class TimesController : Controller
     {
 
-        private Bolao_API_BLL.TimesBLL _BLL;
+        private Api_BLL.TimesBLL _BLL;
 
         public TimesController()
         {
-            _BLL = new Bolao_API_BLL.TimesBLL();
+            _BLL = new Api_BLL.TimesBLL();
         }
 
         [HttpGet]

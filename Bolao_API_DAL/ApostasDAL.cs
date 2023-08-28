@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data;
+using System.Data.Entity;
 
 namespace Bolao_API_DAL
 {
