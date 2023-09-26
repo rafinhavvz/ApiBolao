@@ -36,6 +36,20 @@ namespace apiBolao.Controllers
             return Ok(oItem);
         }
 
+        [HttpGet]
+        [Route("IdBolao")]
+        public ActionResult<Apostas> GetItemIdBolao(int oItemId)
+        {
+            var oItem = _BLL.GetItemIdBolao(oItemId);
+
+            if (oItem == null)
+            {
+                return NotFound("ID Invalido");
+            }
+
+            return Ok(oItem);
+        }
+
         [HttpPost]
         public IActionResult postItem(Apostas oItem)
         {           

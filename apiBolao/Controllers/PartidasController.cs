@@ -28,7 +28,7 @@ namespace apiBolao.Controllers
         {
             var oItem = _BLL.GetItemId(oItemId);
 
-            if(oItem == null)
+            if (oItem == null)
             {
                 return NotFound("ID Invalido");
             }
@@ -37,15 +37,20 @@ namespace apiBolao.Controllers
         }
 
         [HttpPost]
-        public IActionResult postItem(Partidas oItem)
-        {           
+        public IActionResult PostItem([FromBody] IEnumerable<Partidas> oItem)
+        {
             try
             {
+                if (oItem == null || !oItem.Any())
+                {
+                    return BadRequest("A lista de Partidas está vazia ou nula.");
+                }
+
                 // Chame o método para inserir o novo registro na tabela "Times"
                 _BLL.PostItem(oItem);
 
                 // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso
-                return Ok("Sucesso: Registro inserido com êxito.");
+                return Ok(new { message = "Sucesso: Registros inseridos com êxito." });
             }
             catch (Exception ex)
             {
@@ -54,29 +59,29 @@ namespace apiBolao.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult DeleteItem(int oItemId)
-        {
-            try
+            [HttpDelete]
+            public IActionResult DeleteItem(int oItemId)
             {
-                // Chame o método para inserir o novo registro na tabela "Times"
-                _BLL.DeleteItem(oItemId);
+                try
+                {
+                    // Chame o método para inserir o novo registro na tabela "Times"
+                    _BLL.DeleteItem(oItemId);
 
-                // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso
-                return Ok("Sucesso: Registro excluido com êxito.");
+                    // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso
+                    return Ok("Sucesso: Registro excluido com êxito.");
+                }
+                catch (Exception ex)
+                {
+                    // Retorna uma resposta HTTP 500 Internal Server Error com a mensagem de erro
+                    return StatusCode(500, $"Erro: {ex.Message}");
+                }
             }
-            catch (Exception ex)
+
+            [HttpPut]
+            [Route("Update")]
+            public Partidas UpdateItem(Partidas oItem)
             {
-                // Retorna uma resposta HTTP 500 Internal Server Error com a mensagem de erro
-                return StatusCode(500, $"Erro: {ex.Message}");
+                return _BLL.UpdateItem(oItem);
             }
-        }
-
-        [HttpPut]
-        [Route("Update")]
-        public Partidas UpdateItem(Partidas oItem)
-        {
-           return _BLL.UpdateItem(oItem);
         }
     }
-}

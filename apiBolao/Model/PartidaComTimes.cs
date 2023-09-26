@@ -15,9 +15,8 @@ namespace apiBolao.Model
         public string TimeHomeLogo { get; set; }
         public string TimeAwayName { get; set; }
         public string TimeAwayLogo { get; set; }
-        public int Round { get; set; }
         public DateTime Data { get; set; }
         public int Resultado { get; set; }
-        public int Status { get; set; }
+        public string Status { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace apiBolao
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=Designer\\RAFAELSQLSERVER;Initial Catalog=FUTROC;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-LN2OVD7;Initial Catalog=FUTROC;Integrated Security=True;");
             }
         }
     }

@@ -116,6 +116,8 @@ namespace apiBolao.Api_DAL
             
         }
 
+
+
         public static void InsertDataArray<T>(string connectionString, string tableName, IEnumerable<T> dataArray)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

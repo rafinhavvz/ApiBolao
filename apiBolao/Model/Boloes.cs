@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace apiBolao.Model
 {
@@ -26,9 +27,9 @@ namespace apiBolao.Model
         public int Round { get; set; }
 
 
-        [Column("IDTipo")]
-        [Display(Name = "IDTipo")]
-        public int IDTipo { get; set; }
+        [Column("IDCampeonato")]
+        [Display(Name = "IDCampeonato")]
+        public int IDCampeonato { get; set; }
 
         [Column("Valor")]
         [Display(Name = "Valor")]
@@ -57,5 +58,10 @@ namespace apiBolao.Model
         [Column("DataFim")]
         [Display(Name = "DataFim")]
         public DateTime DataFim { get; set; }
+
+        [Column("Status")]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
+
     }
 }

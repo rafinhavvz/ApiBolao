@@ -66,7 +66,6 @@ namespace apiBolao.Api_DAL
                                       TimeHomeLogo = timeHome.Logo,
                                       TimeAwayName = timeAway.Name,
                                       TimeAwayLogo = timeAway.Logo,
-                                      Round = partida.Round,
                                       Data = partida.Data,
                                       Resultado = partida.Resultado,
                                       Status = partida.Status,
@@ -86,7 +85,7 @@ namespace apiBolao.Api_DAL
             return resultados;
         }
 
-        public void PostItem(Partidas oItem)
+        public void PostItem(IEnumerable<Partidas> oItem)
         {
             using (var db = new dbContext())
             {
@@ -98,7 +97,7 @@ namespace apiBolao.Api_DAL
                     if (connection != null)
                     {
                         // Chamar o método genérico para inserir valores
-                        BancoDados.InsertData(connection.ConnectionString, "Partidas", oItem);
+                        BancoDados.InsertDataArray(connection.ConnectionString, "Partidas", oItem);
                     }
                 }
                 catch (Exception ex)

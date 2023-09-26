@@ -11,7 +11,7 @@ namespace apiBolao.Model
         public int IDTeamHome { get; set; }
         public int IDTeamAway { get; set; }
         public DateTime Data { get; set; }
-        public string ResultadoApost { get; set; }
+        public int ResultadoApost { get; set; }
         public int ResultadoReal { get; set; }
         public string Status { get; set; }
         public string NomeTimeHome { get; set; }

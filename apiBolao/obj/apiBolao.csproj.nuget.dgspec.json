@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjetoRafael\\apiBolao\\apiBolao\\apiBolao.csproj": {}
+    "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj": {}
   },
   "projects": {
-    "C:\\ProjetoRafael\\apiBolao\\apiBolao\\apiBolao.csproj": {
+    "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetoRafael\\apiBolao\\apiBolao\\apiBolao.csproj",
+        "projectUniqueName": "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj",
         "projectName": "apiBolao",
-        "projectPath": "C:\\ProjetoRafael\\apiBolao\\apiBolao\\apiBolao.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetoRafael\\apiBolao\\apiBolao\\obj\\",
+        "projectPath": "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj",
+        "packagesPath": "C:\\Users\\RasajeTech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
+          "C:\\Users\\RasajeTech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

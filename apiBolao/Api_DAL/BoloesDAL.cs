@@ -71,7 +71,7 @@ namespace apiBolao.Api_DAL
             return resultados;
         }
 
-        public void PostItem(Boloes oItem)
+        public int PostItem(Boloes oItem)
         {
             using (var db = new dbContext())
             {
@@ -83,9 +83,11 @@ namespace apiBolao.Api_DAL
                     if(connection != null)
                     {
                         // Chamar o método genérico para inserir valores
-                        BancoDados.InsertData(connection.ConnectionString, "Boloes", oItem);
+                        var idGerado = BancoDados.InsertDataAndReturnId(connection.ConnectionString, "Boloes", oItem);
+                        return idGerado;
                     }
-                   
+                    return 0;
+
                 }
                 catch (Exception ex)
                 {

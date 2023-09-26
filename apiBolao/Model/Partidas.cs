@@ -23,11 +23,7 @@ namespace apiBolao.Model
 
         [Column("IDTeamAway")]
         [Display(Name = "IDTeamAway")]
-        public int IDTeamAway { get; set; }
-
-        [Column("Round")]
-        [Display(Name = "Round")]
-        public int Round { get; set; }
+        public int IDTeamAway { get; set; }   
 
         [Column("Data")]
         [Display(Name = "Data")]
@@ -39,7 +35,7 @@ namespace apiBolao.Model
 
         [Column("Status")]
         [Display(Name = "Status")]
-        public int Status { get; set; }
+        public string Status { get; set; }
 
     }
 }

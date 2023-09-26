@@ -24,7 +24,7 @@ public class PartidasBLL
         return data;
     }
 
-    public void PostItem(Partidas oItem)
+    public void PostItem(IEnumerable<Partidas> oItem)
     {
         _DAL.PostItem(oItem);
     }

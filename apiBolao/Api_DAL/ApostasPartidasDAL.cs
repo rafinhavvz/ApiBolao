@@ -80,7 +80,7 @@ namespace apiBolao.Api_DAL
                                     int idTeamHome = reader.GetInt32(reader.GetOrdinal("IDTeamHome"));
                                     int idTeamAway = reader.GetInt32(reader.GetOrdinal("IDTeamAway"));
                                     DateTime data = reader.GetDateTime(reader.GetOrdinal("Data"));
-                                    string ResultadoApost = reader.GetString(reader.GetOrdinal("ResultadoAposta"));
+                                    int ResultadoApost = reader.GetInt32(reader.GetOrdinal("ResultadoAposta"));
                                     int ResultadoReal = reader.GetInt32(reader.GetOrdinal("ResultadoReal"));
                                     string Status = reader.GetString(reader.GetOrdinal("Status"));
                                     string NomeTimeHome = reader.GetString(reader.GetOrdinal("NomeTimeHome"));

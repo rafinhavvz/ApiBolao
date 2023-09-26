@@ -72,6 +72,36 @@ namespace apiBolao.Api_DAL
             return resultados;
         }
 
+        public List<Apostas> GetItemIdBolao(int oItemId)
+        {
+            List<Apostas> resultados = null;
+
+            using (var db = new dbContext())
+            {
+                // Obter a conexão do contexto do Entity Framework
+                var connection = db.Database.GetDbConnection() as SqlConnection;
+
+                try
+                {
+                    if (connection != null)
+                    {
+                         resultados = db.Apostas.Where(e => e.IdBolao == oItemId).ToList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
+                }
+                finally
+                {
+                    // Fechar a conexão com o banco de dados
+                    connection?.Close();
+                }
+            }
+
+            return resultados;
+        }
+
         public int PostItem(Apostas oItem)
         {
             int idGerado = 0;

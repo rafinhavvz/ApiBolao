@@ -24,6 +24,14 @@ public class ApostasBLL
         return data;
     }
 
+    public List<Apostas> GetItemIdBolao(int oItemId)
+    {
+        var data = _DAL.GetItemIdBolao(oItemId);
+
+        return data;
+    }
+
+
     public int PostItem(Apostas oItem)
     {
         return _DAL.PostItem(oItem);

@@ -24,9 +24,11 @@ public class BoloesBLL
         return data;
     }
 
-    public void PostItem(Boloes oItem)
+    public int PostItem(Boloes oItem)
     {
-        _DAL.PostItem(oItem);
+        var data =  _DAL.PostItem(oItem);
+
+        return data;
     }
 
     public void DeleteItem(int oItemId)
