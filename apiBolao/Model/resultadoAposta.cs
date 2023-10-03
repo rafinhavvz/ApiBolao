@@ -7,6 +7,7 @@ namespace apiBolao.Model
 {
     public class ResultadoAposta
     {
+        public int idPartida { get; set; }
         public int IDBolao { get; set; }
         public int IDTeamHome { get; set; }
         public int IDTeamAway { get; set; }

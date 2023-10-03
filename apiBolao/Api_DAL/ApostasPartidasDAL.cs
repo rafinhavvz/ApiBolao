@@ -59,6 +59,7 @@ namespace apiBolao.Api_DAL
                            P.resultado As ResultadoReal,
                            AP.resultado AS ResultadoAposta,
                            AP.status AS Status,
+                           AP.IdPartida AS IdPartida,
                            TH.name AS NomeTimeHome, TH.logo AS LogoTimeHome,
                            TA.name AS NomeTimeAway, TA.logo AS LogoTimeAway
                     FROM ApostasPartidas AS AP
@@ -82,6 +83,7 @@ namespace apiBolao.Api_DAL
                                     DateTime data = reader.GetDateTime(reader.GetOrdinal("Data"));
                                     int ResultadoApost = reader.GetInt32(reader.GetOrdinal("ResultadoAposta"));
                                     int ResultadoReal = reader.GetInt32(reader.GetOrdinal("ResultadoReal"));
+                                    int idPartida = reader.GetInt32(reader.GetOrdinal("idPartida"));
                                     string Status = reader.GetString(reader.GetOrdinal("Status"));
                                     string NomeTimeHome = reader.GetString(reader.GetOrdinal("NomeTimeHome"));
                                     string NomeTimeAway = reader.GetString(reader.GetOrdinal("NomeTimeAway"));
@@ -92,6 +94,7 @@ namespace apiBolao.Api_DAL
                                     // Exemplo de criação do objeto ResultadoAposta, se você tiver essa classe
                                     ResultadoAposta resultadoAposta = new ResultadoAposta
                                     {
+                                        idPartida = idPartida,
                                         IDBolao = idBolao,
                                         IDTeamHome = idTeamHome,
                                         IDTeamAway = idTeamAway,

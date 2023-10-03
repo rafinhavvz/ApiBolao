@@ -170,7 +170,7 @@ namespace apiBolao.Controllers
         [HttpPut]
         [Route("Update")]
         public IActionResult UpdateItem(Boloes oItem, [FromQuery] int acumulado)
-        {
+          {
             try
             {
                 if (acumulado > 0)
