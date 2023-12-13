@@ -79,7 +79,7 @@ namespace apiBolao.Controllers
 
             [HttpPut]
             [Route("Update")]
-            public Partidas UpdateItem(Partidas oItem)
+            public IEnumerable<Partidas> UpdateItem(IEnumerable<Partidas> oItem)
             {
                 return _BLL.UpdateItem(oItem);
             }

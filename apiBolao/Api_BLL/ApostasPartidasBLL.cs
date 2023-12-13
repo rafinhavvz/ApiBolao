@@ -45,4 +45,9 @@ public class ApostasPartidasBLL
         return data;
     }
 
+    public void UpdateItemArray(IEnumerable<ApostasPartidas> oItemArray)
+    {
+        _DAL.UpdateItemArray(oItemArray); ;
+    }
+
 }

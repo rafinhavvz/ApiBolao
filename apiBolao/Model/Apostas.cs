@@ -10,7 +10,7 @@ namespace apiBolao.Model
     {
         [Key]
         [Column("ID")]
-        [Display(Name = "Codigo")]
+        [Display(Name = "Id")]
         public int ID { get; set; }
 
         [Column("IdBolao")]

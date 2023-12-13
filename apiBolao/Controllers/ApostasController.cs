@@ -1,4 +1,5 @@
-﻿using apiBolao.Model;
+﻿using apiBolao.Api_BLL;
+using apiBolao.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 
@@ -88,9 +89,77 @@ namespace apiBolao.Controllers
 
         [HttpPut]
         [Route("Update")]
-        public Apostas UpdateItem(Apostas oItem)
+        public IActionResult UpdateItem(List<ModCupom> oItems)
         {
-           return _BLL.UpdateItem(oItem);
+            try
+            { // Mapear as propriedades de ModCupom para Apostas e Partidas
+                List<Apostas> apostasList = new List<Apostas>();
+                List<ApostasPartidas> partidasList = new List<ApostasPartidas>();
+                Boloes oBolao = new Boloes();
+                foreach (var modCupom in oItems)
+                {
+                    Apostas apostas = new Apostas
+                    {
+                        ID = modCupom.Id,
+                        IdBolao = modCupom.IdBolao,
+                        IdCliente = modCupom.IdCliente,
+                        Round = modCupom.Round,
+                        Data = modCupom.Data,
+                        Cupons = modCupom.Cupons,
+                        Status = modCupom.Status,
+                        ValorApostado = modCupom.ValorApostado,
+                        ValorGanho = modCupom.ValorGanho,
+                        QtdCupom = modCupom.QtdCupom
+                        // Mapeie outras propriedades conforme necessário
+                    };
+                   
+                        foreach (var partid in modCupom.Partidas)
+                        {
+                            ApostasPartidas partidas = new ApostasPartidas
+                            {
+                                ID = partid.Id,
+                                IdAposta = modCupom.Id,
+                                IdPartida = partid.IdPartida,
+                                Status = partid.Status,
+                                Resultado = partid.ResultadoApost
+                                // Mapeie outras propriedades conforme necessário
+                            };
+
+                            partidasList.Add(partidas);
+                        
+                        }
+                    
+
+
+
+                        apostasList.Add(apostas);
+                   
+                }
+
+
+                ApostasBLL oApostaBLL = new ApostasBLL();
+                BoloesBLL oBoloesBLL = new BoloesBLL();
+                ApostasPartidasBLL oApostaPartidaBLL = new ApostasPartidasBLL();
+                
+                oApostaBLL.UpdateItemArray(apostasList);
+                oApostaPartidaBLL.UpdateItemArray(partidasList);
+
+                 oBolao = oBoloesBLL.GetItemId(apostasList[0].IdBolao);
+
+                oBolao.Status = "FINALIZADO";
+
+                oBoloesBLL.UpdateItem(oBolao);
+
+                // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso em formato JSON
+                return Ok(new { message = "Sucesso: Registros atualizados com êxito." });
+            }
+            catch (Exception ex)
+            {
+                // Retorna uma resposta HTTP 500 Internal Server Error com a mensagem de erro
+                return StatusCode(500, $"Erro: {ex.Message}");
+            }
         }
+
+
     }
 }

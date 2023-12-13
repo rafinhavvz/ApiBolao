@@ -5,6 +5,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace apiBolao.Api_DAL
@@ -208,6 +209,52 @@ namespace apiBolao.Api_DAL
                 }
             }
         }
+
+        public static void UpdateDataArray<T>(string connectionString, string tableName, IEnumerable<T> dataArray)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection?.Open();
+
+                if (dataArray == null || !dataArray.Any())
+                {
+                    throw new ArgumentException("O array de dados está vazio ou nulo.", nameof(dataArray));
+                }
+
+                var dataType = dataArray.First().GetType().GetProperties().Where(prop => !prop.Name.Equals("ID", StringComparison.OrdinalIgnoreCase));
+
+                StringBuilder columnNames = new StringBuilder();
+                foreach (var prop in dataType)
+                {
+                    columnNames.Append(prop.Name).Append(" = @").Append(prop.Name).Append(",");
+                }
+
+                // Remover a vírgula extra no final
+                columnNames.Length--;
+
+                string sql = $"UPDATE {tableName} SET {columnNames} WHERE ID = @ID";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    foreach (var data in dataArray)
+                    {
+                        command.Parameters.Clear();
+
+                        foreach (var prop in dataType)
+                        {
+                            command.Parameters.AddWithValue("@" + prop.Name, prop.GetValue(data));
+                        }
+                        var idProperty = data.GetType().GetProperty("ID");
+                        if (idProperty != null)
+                        {
+                            command.Parameters.AddWithValue("@ID", idProperty.GetValue(data));
+                        }
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
 
         // Método genérico para realizar DELETE em qualquer tabela
         public static void DeleteData<T>(string connectionString, string tableName, int id)

@@ -1,4 +1,5 @@
-﻿using apiBolao.Model;
+﻿using apiBolao.Api_BLL;
+using apiBolao.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Reflection;
@@ -48,7 +49,18 @@ namespace apiBolao.Controllers
 
                 // Chame o método para inserir o novo registro na tabela "Boloes" (ou como sua tabela se chama)
                 var oIdGerado = _BLL.PostItem(oItem);
-                if(oIdGerado > 0)
+
+                TramitacaoRodada otramitacaoRodada = new TramitacaoRodada();
+
+                TramitacaoRodadaBLL tramitacaoRodadaBLL = new TramitacaoRodadaBLL();
+
+                otramitacaoRodada.IDBolao = oIdGerado;
+                otramitacaoRodada.Recuperado = oItem.Recuperado;
+                otramitacaoRodada.Round = oItem.Round;
+                otramitacaoRodada.Data = oItem.DataFim;
+
+                tramitacaoRodadaBLL.PostItem(otramitacaoRodada);
+                if (oIdGerado > 0)
                 {
                     // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso
                     return Ok(new { message = "Sucesso: Registro incluído com êxito.", idGerado = oIdGerado });
@@ -173,12 +185,18 @@ namespace apiBolao.Controllers
           {
             try
             {
+                TramitacaoRodada otramitacaoRodada = new TramitacaoRodada();
+                TramitacaoRodadaBLL tramitacaoRodadaBLL = new TramitacaoRodadaBLL();
+
+                otramitacaoRodada = tramitacaoRodadaBLL.GetItemIdBolao(oItem.ID);
+
                 if (acumulado > 0)
                 {
                     if (oItem.Recuperado < oItem.AcumuladoBase)
                     {
                         // Atualize oItem.Recuperado com base no valor de acumulado
                         oItem.Recuperado = acumulado;
+                        otramitacaoRodada.Recuperado = acumulado;
 
                         // Verifique se oItem.Recuperado ultrapassou oItem.AcumuladoBase
                         if (oItem.Recuperado >= oItem.AcumuladoBase)
@@ -187,6 +205,7 @@ namespace apiBolao.Controllers
                             // atualize oItem.Acumulado com o valor restante
                             oItem.Acumulado = acumulado;
                             oItem.Recuperado = oItem.AcumuladoBase; // O Recuperado agora iguala o AcumuladoBase
+                            otramitacaoRodada.Recuperado = oItem.AcumuladoBase;
                         }
                     }
                     else
@@ -198,6 +217,10 @@ namespace apiBolao.Controllers
                 }
                 // Chame o método para inserir o novo registro na tabela "Times"
                 _BLL.UpdateItem(oItem);
+
+                otramitacaoRodada.Round = oItem.Round;
+                tramitacaoRodadaBLL.UpdateItem(otramitacaoRodada);
+
 
                 // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso em formato JSON
                 return Ok(new { message = "Sucesso: Registro atualizado com êxito." });

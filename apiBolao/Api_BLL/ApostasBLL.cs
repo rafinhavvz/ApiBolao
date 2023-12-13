@@ -53,4 +53,9 @@ public class ApostasBLL
         return data;
     }
 
+    public void UpdateItemArray(IEnumerable<Apostas> oItemArray)
+    {
+         _DAL.UpdateItemArray(oItemArray); ;
+    }
+
 }

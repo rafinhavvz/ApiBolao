@@ -1,5 +1,4 @@
 ﻿using apiBolao.Model;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,13 +6,11 @@ using System.Data;
 
 namespace apiBolao.Api_DAL
 {
-    public class ApostasDAL
+    public class TramitacaoRodadaDAL
     {
-
-
-        public List<Apostas> GetAllItens()
+        public List<TramitacaoRodada> GetAllItens()
         {
-            List<Apostas> resultados = new List<Apostas>();
+            List<TramitacaoRodada> resultados = new List<TramitacaoRodada>();
 
             using (var db = new dbContext())
             {
@@ -25,7 +22,7 @@ namespace apiBolao.Api_DAL
                     if (connection != null)
                     {
                         // Chamar o método genérico para inserir valores
-                        resultados = BancoDados.SelectAll<Apostas>(connection.ConnectionString, "Apostas");
+                        resultados = BancoDados.SelectAll<TramitacaoRodada>(connection.ConnectionString, "TramitacaoRodada");
                     }
                 }
                 catch (Exception ex)
@@ -43,9 +40,9 @@ namespace apiBolao.Api_DAL
         }
 
 
-        public Apostas GetItemId(int oItemId)
+        public TramitacaoRodada GetItemId(int oItemId)
         {
-            Apostas resultados = null;
+            TramitacaoRodada resultados = null;
 
             using (var db = new dbContext())
             {
@@ -56,7 +53,7 @@ namespace apiBolao.Api_DAL
                 {
                     if (connection != null)
                     {
-                        resultados = BancoDados.SelectByID<Apostas>(connection.ConnectionString, "Apostas", oItemId);
+                        resultados = BancoDados.SelectByID<TramitacaoRodada>(connection.ConnectionString, "TramitacaoRodada", oItemId);
                     }
                 }
                 catch (Exception ex)
@@ -73,9 +70,9 @@ namespace apiBolao.Api_DAL
             return resultados;
         }
 
-        public List<Apostas> GetItemIdBolao(int oItemId)
+        public TramitacaoRodada GetItemIdBolao(int oItemId)
         {
-            List<Apostas> resultados = null;
+            TramitacaoRodada resultado = null;
 
             using (var db = new dbContext())
             {
@@ -84,10 +81,37 @@ namespace apiBolao.Api_DAL
 
                 try
                 {
-                    if (connection != null)
-                    {
-                         resultados = db.Apostas.Where(e => e.IdBolao == oItemId).ToList();
-                    }
+                    // Consulta para obter as partidas com o IDBolao correspondente
+                    resultado = db.TramitacaoRodada.FirstOrDefault(tr => tr.IDBolao == oItemId);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
+                }
+                finally
+                {
+                    // Fechar a conexão com o banco de dados
+                    connection?.Close();
+                }
+            }
+
+            return resultado;
+        }
+
+        public List<TramitacaoRodada> GetItemIdBolaoList(int oItemId)
+        {
+            List<TramitacaoRodada> resultados = new List<TramitacaoRodada>();
+
+            using (var db = new dbContext())
+            {
+                // Obter a conexão do contexto do Entity Framework
+                var connection = db.Database.GetDbConnection() as SqlConnection;
+
+                try
+                {
+                    // Consulta para obter as partidas com o IDBolao correspondente
+                    resultados = db.TramitacaoRodada.Where(tr => tr.IDBolao == oItemId)
+                    .ToList();
                 }
                 catch (Exception ex)
                 {
@@ -103,10 +127,8 @@ namespace apiBolao.Api_DAL
             return resultados;
         }
 
-        public int PostItem(Apostas oItem)
+        public void PostItem(TramitacaoRodada oItem)
         {
-            int idGerado = 0;
-
             using (var db = new dbContext())
             {
                 // Obter a conexão do contexto do Entity Framework
@@ -117,11 +139,8 @@ namespace apiBolao.Api_DAL
                     if (connection != null)
                     {
                         // Chamar o método genérico para inserir valores
-                         idGerado = BancoDados.InsertDataAndReturnId(connection.ConnectionString, "Apostas", oItem);
-                       
-
+                        BancoDados.InsertData(connection.ConnectionString, "TramitacaoRodada", oItem);
                     }
-                   
                 }
                 catch (Exception ex)
                 {
@@ -132,11 +151,10 @@ namespace apiBolao.Api_DAL
                     // Fechar a conexão com o banco de dados
                     connection?.Close();
                 }
-                return idGerado;
             }
         }
 
-        public Apostas UpdateItem(Apostas oItem)
+        public TramitacaoRodada UpdateItem(TramitacaoRodada oItem)
         {
             using (var db = new dbContext())
             {
@@ -147,7 +165,7 @@ namespace apiBolao.Api_DAL
                 {
                     if (connection != null)
                     {
-                        BancoDados.UpdateData(connection.ConnectionString, "Apostas", oItem, oItem.ID);
+                        BancoDados.UpdateData(connection.ConnectionString, "TramitacaoRodada", oItem, oItem.ID);
                     }
                 }
 
@@ -165,34 +183,6 @@ namespace apiBolao.Api_DAL
             }
         }
 
-        public void UpdateItemArray(IEnumerable<Apostas> oItem)
-        {
-            using (var db = new dbContext())
-            {
-                // Obter a conexão do contexto do Entity Framework
-                var connection = db.Database.GetDbConnection() as SqlConnection;
-
-                try
-                {
-                    if (connection != null)
-                    {
-                        // Chamar o método genérico para inserir valores
-                        BancoDados.UpdateDataArray(connection.ConnectionString, "Apostas", oItem);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
-                }
-                finally
-                {
-                    // Fechar a conexão com o banco de dados
-                    connection?.Close();
-                  
-                }
-            }
-        }
-
         public void DeleteItem(int oItemId)
         {
             using (var db = new dbContext())
@@ -204,7 +194,7 @@ namespace apiBolao.Api_DAL
                 {
                     if (connection != null)
                     {
-                        BancoDados.DeleteData<Apostas>(connection.ConnectionString, "Apostas", oItemId);
+                        BancoDados.DeleteData<TramitacaoRodada>(connection.ConnectionString, "TramitacaoRodada", oItemId);
                     }
                 }
                 catch (Exception ex)

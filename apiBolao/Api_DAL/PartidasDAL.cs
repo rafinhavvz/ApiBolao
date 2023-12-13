@@ -112,7 +112,7 @@ namespace apiBolao.Api_DAL
             }
         }
 
-        public Partidas UpdateItem(Partidas oItem)
+        public IEnumerable<Partidas> UpdateItem(IEnumerable<Partidas> oItem)
         {
             using (var db = new dbContext())
             {
@@ -123,7 +123,7 @@ namespace apiBolao.Api_DAL
                 {
                     if (connection != null)
                     {
-                        BancoDados.UpdateData(connection.ConnectionString, "Partidas", oItem, oItem.ID);
+                        BancoDados.UpdateDataArray(connection.ConnectionString, "Partidas", oItem);
                     }
                 }
 

@@ -34,7 +34,7 @@ public class PartidasBLL
         _DAL.DeleteItem(oItemId);
     }
 
-    public Partidas UpdateItem(Partidas oItem)
+    public IEnumerable<Partidas> UpdateItem(IEnumerable<Partidas> oItem)
     {
         var data = _DAL.UpdateItem(oItem);
         if (data == null)

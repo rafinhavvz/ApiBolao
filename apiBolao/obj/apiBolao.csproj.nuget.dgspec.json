@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj": {}
+    "C:\\Users\\rafae\\OneDrive\\Documentos\\Projetos\\Versionado Git\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj": {
+    "C:\\Users\\rafae\\OneDrive\\Documentos\\Projetos\\Versionado Git\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj",
+        "projectUniqueName": "C:\\Users\\rafae\\OneDrive\\Documentos\\Projetos\\Versionado Git\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj",
         "projectName": "apiBolao",
-        "projectPath": "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj",
-        "packagesPath": "C:\\Users\\RasajeTech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RasajeTech\\Documents\\RAFAEL TRABALHOS\\2.PROJETOS PROGRAMADOR\\1.PESSOAL\\ApiBolao-Backend\\apiBolao\\obj\\",
+        "projectPath": "C:\\Users\\rafae\\OneDrive\\Documentos\\Projetos\\Versionado Git\\ApiBolao-Backend\\apiBolao\\apiBolao.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafae\\OneDrive\\Documentos\\Projetos\\Versionado Git\\ApiBolao-Backend\\apiBolao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\RasajeTech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
