@@ -13,7 +13,7 @@ namespace apiBolao.Api_DAL
 
         public List<Apostas> GetAllItens()
         {
-            List<Apostas> resultados = new List<Apostas>();
+            List<Apostas> resultados = new();
 
             using (var db = new dbContext())
             {
@@ -45,7 +45,7 @@ namespace apiBolao.Api_DAL
 
         public Apostas GetItemId(int oItemId)
         {
-            Apostas resultados = null;
+            Apostas resultados = new();
 
             using (var db = new dbContext())
             {
@@ -75,7 +75,7 @@ namespace apiBolao.Api_DAL
 
         public List<Apostas> GetItemIdBolao(int oItemId)
         {
-            List<Apostas> resultados = null;
+            List<Apostas> resultados = new();
 
             using (var db = new dbContext())
             {
@@ -107,115 +107,107 @@ namespace apiBolao.Api_DAL
         {
             int idGerado = 0;
 
-            using (var db = new dbContext())
+            using var db = new dbContext();
+            // Obter a conexão do contexto do Entity Framework
+            var connection = db.Database.GetDbConnection() as SqlConnection;
+
+            try
             {
-                // Obter a conexão do contexto do Entity Framework
-                var connection = db.Database.GetDbConnection() as SqlConnection;
+                if (connection != null)
+                {
+                    // Chamar o método genérico para inserir valores
+                    idGerado = BancoDados.InsertDataAndReturnId(connection.ConnectionString, "Apostas", oItem);
 
-                try
-                {
-                    if (connection != null)
-                    {
-                        // Chamar o método genérico para inserir valores
-                         idGerado = BancoDados.InsertDataAndReturnId(connection.ConnectionString, "Apostas", oItem);
-                       
 
-                    }
-                   
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
-                }
-                finally
-                {
-                    // Fechar a conexão com o banco de dados
-                    connection?.Close();
-                }
-                return idGerado;
+
             }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
+            }
+            finally
+            {
+                // Fechar a conexão com o banco de dados
+                connection?.Close();
+            }
+            return idGerado;
         }
 
         public Apostas UpdateItem(Apostas oItem)
         {
-            using (var db = new dbContext())
+            using var db = new dbContext();
+            // Obter a conexão do contexto do Entity Framework
+            var connection = db.Database.GetDbConnection() as SqlConnection;
+
+            try
             {
-                // Obter a conexão do contexto do Entity Framework
-                var connection = db.Database.GetDbConnection() as SqlConnection;
-
-                try
+                if (connection != null)
                 {
-                    if (connection != null)
-                    {
-                        BancoDados.UpdateData(connection.ConnectionString, "Apostas", oItem, oItem.ID);
-                    }
+                    BancoDados.UpdateData(connection.ConnectionString, "Apostas", oItem, oItem.ID);
                 }
-
-                catch (Exception ex)
-                {
-                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
-                }
-                finally
-                {
-                    // Fechar a conexão com o banco de dados
-                    connection?.Close();
-                    
-                }
-                return oItem;
             }
+
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
+            }
+            finally
+            {
+                // Fechar a conexão com o banco de dados
+                connection?.Close();
+
+            }
+            return oItem;
         }
 
         public void UpdateItemArray(IEnumerable<Apostas> oItem)
         {
-            using (var db = new dbContext())
-            {
-                // Obter a conexão do contexto do Entity Framework
-                var connection = db.Database.GetDbConnection() as SqlConnection;
+            using var db = new dbContext();
+            // Obter a conexão do contexto do Entity Framework
+            var connection = db.Database.GetDbConnection() as SqlConnection;
 
-                try
+            try
+            {
+                if (connection != null)
                 {
-                    if (connection != null)
-                    {
-                        // Chamar o método genérico para inserir valores
-                        BancoDados.UpdateDataArray(connection.ConnectionString, "Apostas", oItem);
-                    }
+                    // Chamar o método genérico para inserir valores
+                    BancoDados.UpdateDataArray(connection.ConnectionString, "Apostas", oItem);
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
-                }
-                finally
-                {
-                    // Fechar a conexão com o banco de dados
-                    connection?.Close();
-                  
-                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
+            }
+            finally
+            {
+                // Fechar a conexão com o banco de dados
+                connection?.Close();
+
             }
         }
 
         public void DeleteItem(int oItemId)
         {
-            using (var db = new dbContext())
-            {
-                // Obter a conexão do contexto do Entity Framework
-                var connection = db.Database.GetDbConnection() as SqlConnection;
+            using var db = new dbContext();
+            // Obter a conexão do contexto do Entity Framework
+            var connection = db.Database.GetDbConnection() as SqlConnection;
 
-                try
+            try
+            {
+                if (connection != null)
                 {
-                    if (connection != null)
-                    {
-                        BancoDados.DeleteData<Apostas>(connection.ConnectionString, "Apostas", oItemId);
-                    }
+                    BancoDados.DeleteData<Apostas>(connection.ConnectionString, "Apostas", oItemId);
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
-                }
-                finally
-                {
-                    // Fechar a conexão com o banco de dados
-                    connection?.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao acessar o banco de dados: {ex.Message}");
+            }
+            finally
+            {
+                // Fechar a conexão com o banco de dados
+                connection?.Close();
             }
         }
     }
