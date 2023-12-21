@@ -63,5 +63,17 @@ namespace apiBolao.Model
         [Display(Name = "Status")]
         public string Status { get; set; }
 
+        [Column("ValorPago")]
+        [Display(Name = "ValorPago")]
+        public decimal ValorPago { get; set; }
+
+        [Column("CuponsPremiados")]
+        [Display(Name = "CuponsPremiados")]
+        public int CuponsPremiados { get; set; }
+
+        [Column("QtdAcerto")]
+        [Display(Name = "QtdAcerto")]
+        public int QtdAcerto { get; set; }
+
     }
 }

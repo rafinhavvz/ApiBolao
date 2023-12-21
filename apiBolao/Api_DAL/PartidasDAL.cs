@@ -67,6 +67,8 @@ namespace apiBolao.Api_DAL
                                       TimeAwayName = timeAway.Name,
                                       TimeAwayLogo = timeAway.Logo,
                                       Data = partida.Data,
+                                      ResultAway = partida.ResultAway,
+                                      ResultHome = partida.ResultHome,
                                       Resultado = partida.Resultado,
                                       Status = partida.Status,
                                   }).ToList();

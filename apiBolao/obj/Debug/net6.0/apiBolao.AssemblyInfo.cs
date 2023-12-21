@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apiBolao")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+252eb9e982ee1140e383e6c59bcae8893cd43178")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("apiBolao")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apiBolao")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

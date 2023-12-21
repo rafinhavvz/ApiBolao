@@ -33,6 +33,14 @@ namespace apiBolao.Model
         [Display(Name = "Resultado")]
         public int Resultado { get; set; }
 
+        [Column("ResultHome")]
+        [Display(Name = "ResultHome")]
+        public int ResultHome { get; set; }
+
+        [Column("ResultAway")]
+        [Display(Name = "ResultAway")]
+        public int ResultAway { get; set; }
+
         [Column("Status")]
         [Display(Name = "Status")]
         public string Status { get; set; }

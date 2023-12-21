@@ -144,11 +144,11 @@ namespace apiBolao.Controllers
                 oApostaBLL.UpdateItemArray(apostasList);
                 oApostaPartidaBLL.UpdateItemArray(partidasList);
 
-                 oBolao = oBoloesBLL.GetItemId(apostasList[0].IdBolao);
+                // oBolao = oBoloesBLL.GetItemId(apostasList[0].IdBolao);
 
-                oBolao.Status = "FINALIZADO";
+                //oBolao.Status = "FINALIZADO";
 
-                oBoloesBLL.UpdateItem(oBolao);
+                //oBoloesBLL.UpdateItem(oBolao);
 
                 // Retorna uma resposta HTTP 200 OK com uma mensagem de sucesso em formato JSON
                 return Ok(new { message = "Sucesso: Registros atualizados com êxito." });
