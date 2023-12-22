@@ -107,7 +107,6 @@ namespace apiBolao.Controllers
         {
             try
             {
-                const string ApiRootUrl = "http://localhost:5288";
 
                 // Verifique se uma imagem foi enviada
                 if (Imagem == null || Imagem.Length == 0)
@@ -139,7 +138,7 @@ namespace apiBolao.Controllers
                     Imagem.CopyTo(fileStream);
                 }
 
-                var imageUrl = $"{ApiRootUrl}/Boloes/GetImage?fileName={uniqueFileName}";
+                var imageUrl = $"/Boloes/GetImage?fileName={uniqueFileName}";
 
                 return Ok(new { urlImage = imageUrl });
 
